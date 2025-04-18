@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokebook Categories</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Jokebook Categories</h1>
+    </header>
+    <main>
+        <ul>
+            <% categories.forEach(function(category) { %>
+                <li><a href="/jokebook/joke/<%= category %>"><%= category %></a></li>
+            <% }); %>
+        </ul>
+        <a href="/">Back to Random Joke</a>
+    </main>
+</body>
+</html>

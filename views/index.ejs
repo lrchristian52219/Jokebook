@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokebook</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <!-- Random Joke Section -->
+        <section id="random-joke">
+            <h2>Your Random Joke</h2>
+            <p id="joke-setup"></p>
+            <p id="joke-delivery"></p>
+            <button id="random-joke-button">Get Another Joke</button>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories">
+            <h2>Search for Jokes by Category</h2>
+            <!-- Search bar for entering a category -->
+            <form id="category-search-form">
+                <label for="category-search">Enter a category:</label>
+                <input type="text" id="category-search" name="category" placeholder="e.g., Programming" required>
+                <button type="submit">Search</button>
+            </form>
+            <ul id="joke-list"></ul>
+        </section>
+
+        <!-- Add Joke Section -->
+        <section id="add-joke">
+            <h2>Add a New Joke</h2>
+            <form id="new-joke-form">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <% categories.forEach(function(category) { %>
+                        <option value="<%= category.name %>"><%= category.name %></option>
+                    <% }); %>
+                </select>
+
+                <label for="setup">Setup:</label>
+                <input type="text" id="setup" name="setup" required>
+
+                <label for="delivery">Delivery:</label>
+                <input type="text" id="delivery" name="delivery" required>
+
+                <button type="submit">Add Joke</button>
+            </form>
+        </section>
+    </main>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
